@@ -1,5 +1,11 @@
 # 📚 Block Chain
 
+此节笔记主要参考了 PKU 肖臻老师的《区块链技术与应用》公开课。
+
+肖臻老师的homepage：[http://zhenxiao.com/](http://zhenxiao.com/)
+
+公开课网址：[https://www.bilibili.com/video/av37065233/](https://www.bilibili.com/video/av37065233/)
+
 ---
 
 ## 什么是区块链？
@@ -45,6 +51,10 @@ block body 中主要保存了本区块的各种数据。BTC 链的 block body �
 挖矿的逻辑是，miner 需要不断调整一个叫做 nonce 的参数，使得一个复杂的 hash function 的输出小于规定的 target 值。 在申请提交区块时，miner 将这个 nonce 参数写入 block header，维护区块链的节点会验证这个 nonce 是否使得 hash function 的输出小于 target。如果确实小于 target，发布这个区块。
 
 ---
+
+## 区块链的分叉
+
+___
 
 ## Merkle Proof
 
@@ -94,14 +104,71 @@ DAG 的每个位置由伪随机挑选的 256 个 cache 中的元素生成。最�
 miner 挖矿时需维护 cache 和 DAG，而进行验证的轻节点只需要维护 cache，动态生成所需要的 DAG 元素。这样做的好处是使得 miner 有 memory hard 的同时，轻节点验证不出现此问题。
 
 ### ETH 的挖矿难度调整策略
-
-行内公式示例：$ a^2 + b^2 = c^2 $
-
-块级公式示例：
+ETH 进行挖矿难度的主要作用是稳定出块速度以及稳定货币供给量， 挖矿难度 $diff$ 与 miner puzzle 的 $target$ 负相关。每个区块的挖矿难度基于以下公式：
 
 $$
-\sum_{i=1}^n i = \frac{n(n+1)}{2}
+D(H) \equiv 
+\begin{cases}
+D_0, & \text{if } H_i = 0 \\
+\max\left( D_0, P(H)_{H_d} + x \times \zeta_2 \right) + \epsilon, & \text{otherwise}
+\end{cases}
 $$
+
+$where：$
+
+$$
+D_0 \equiv 131072
+$$
+
+- $H_i$ 是本区块序号。
+- $D(H)$ 是本区块的难度，由基础部分 $P(H)_{H_d} + x \times \zeta_2$ 和难度炸弹部分 $\epsilon$ 相加得到。
+- $P(H)_{H_d}$ 是父区块的难度，每个区块的难度都是在父区块难度的基础上进行调整。
+- $x \times \zeta_2$ 用于自适应调节出块难度，维持稳定的出块速度。
+- $\epsilon$ 表示设定的难度炸弹，其作用是在一段时间后使得挖矿难度爆炸，迫使 PoW 向 PoS 转型。
+- 基础部分有下界，为最小值 $D_0 = 131072$。
+
+自适应难度调整 $x \times \zeta_2$:
+
+$$
+x \equiv \left\lfloor \frac{P(H)_{H_d}}{2048} \right\rfloor
+\quad
+$$
+
+$$
+\zeta_2 \equiv \max\left( y - \left\lfloor \frac{H_s - P(H)_{H_s}}{9} \right\rfloor, -99 \right)
+\quad
+$$
+
+- $x$ 是调整的粒度，$\zeta_2$ 为调整的系数。
+- $y$ 和父区块的 uncle 数有关。如果父区块中包括了 uncle，则 $y$ 为 2，否则为 1。
+- 父块包含 uncle 时，难度会大一个单位，因为包含 uncle 时新发行的货币量大，需要适当提高难度以保持货币发行量稳定。
+- 难度降低的上界设置为 $-99$，主要是应对被黑客攻击或其他目前想不到的黑天鹅事件。
+
+$$
+y - \left\lfloor \frac{H_S - P(H)_{H_S}}{9} \right\rfloor
+$$
+
+- $H_S$ 是本区块的时间戳，$P(H)_{H_S}$ 是父区块的时间戳，均以秒为单位，并规定 $H_S > P(H)_{H_S}$ 。$H_S - P(H)_{H_S}$ 就是出块时间。
+  - 该部分是稳定出块速度的最重要部分：出块时间过短则调大难度，出块时间过长则调小难度。
+
+- 以父块不带 uncle 的情况（$y=1$）为例：
+  - 出块时间在 $[1,8]$ 之间，出块时间过短，难度调大一个单位。
+  - 出块时间在 $[9,17]$ 之间，出块时间可以接受，难度保持不变。
+  - 相差时间在 $[18,26]$ 之间，出块时间过长，难度调小一个单位。
+
+难度炸弹 $\epsilon$:
+
+$$\epsilon \equiv \left\lfloor 2^{\left\lfloor \frac{H_i'}{100000} \right\rfloor - 2} \right\rfloor $$
+
+$$H_i' \equiv \max(H_i - 3,000,000)$$
+
+- 每十万个区块扩大一倍，是 2 的指数函数，后期增长极快，因此被称为难度"炸弹"。
+- 降低迁移到 PoS 协议时的分叉风险：当挖矿难度激增时，矿工有动力迁移至 PoS 协议。
+- 由真实区块号 $H_i$ 减去 $300$ 万得到（即 $H_i' = \max(H_i - 3,000,000)$）。  
+- 此设计源于低估 PoS 协议的开发难度，需延长约一年半的过渡期（通过 [EIP-100](https://eips.ethereum.org/EIPS/eip-100) 实现）。
+
+
+
 
 
 

@@ -2,7 +2,17 @@ site_name: U317-AleX's notes
 nav:
   - Home: index.md
   - BlockChain : block_chain.md
-theme: material
+theme: 
+  name: material
+  palette: 
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: 暗色模式
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: 亮色模式
 
 markdown_extensions:
   - pymdownx.arithmatex:
