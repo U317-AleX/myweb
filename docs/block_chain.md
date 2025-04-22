@@ -44,19 +44,40 @@ block body 中主要保存了本区块的各种数据。BTC 链的 block body �
 
 ---
 
+## 维护区块链的网络和共识机制
+
+---
+
 ## 挖矿
 并非所有的用户都能向区块链上添加新的块，只有提供了 PoW 或 PoS 以此获得了**记账权**的用户有权向区块链添加新的区块。
 而获得 PoW （往往伴随着 block reward）的方法称之为挖矿。
 
 挖矿的逻辑是，miner 需要不断调整一个叫做 nonce 的参数，使得一个复杂的 hash function 的输出小于规定的 target 值。 在申请提交区块时，miner 将这个 nonce 参数写入 block header，维护区块链的节点会验证这个 nonce 是否使得 hash function 的输出小于 target。如果确实小于 target，发布这个区块。
 
+由于尝试的 nonce 是随机的，所以**挖矿本身是无记忆的**。也就是说已经尝试的 nonce 数量，和找到一个小于 target 的哈希值的概率无关。
+
 ---
 
-## 区块链的分叉
+## 验证
+
+---
+
+## 区块链的分叉与合并
 
 ___
 
 ## Merkle Proof
+Merkle Proof 是指在区块链中，轻节点用来验证交易合法性的证明机制。它是 SPV（Simplified Payment Verification） 的实现基础。
+
+交易者向维护区块链的网络节点提交区块时需要证明将要写入区块的交易合法。在 BTC 中，交易者需要提供币的来源信息，在 ETH 中，交易者需要提供账号状态信息（账户余额信息）；这些信息或保存在 Merkle tree 中，或保存在 Modified Merkle Patricia Trie 中。当交易者要提交相应信息的节点时，实际上是提供了从 root 节点到相应叶子节点的链路上的所有 hash pointer。维护区块链的网络节点将给定的 hash pointer 与同节点中的 hash pointer 组合，自底向上计算出最终的实际根节点的 atul_hash 并和 block header 中维护的根节点 hash 对比。若两者相等，验证通过；反之不通过。
+
+下面的展示的是一个轻节点进行 Merkle Proof 的过程。
+
+![mpt](img/merkle_proof-1.png)
+![mpt](img/merkle_proof-2.png)
+![mpt](img/merkle_proof-3.png)
+![mpt](img/merkle_proof-4.png)
+**A Merkle Proof in Light Node**
 
 ---
 
@@ -69,14 +90,14 @@ ETH 的数据结构主要有两种：Block Chain 以及 Modified Merkle Patricia
 
 不同于 BTC 只在 block body 中维护交易的内容，ETH 显式地在 block body 中维护账户状态，交易以及收据三种信息。这三种信息被组织成 Merkle Patricia Trie，其 root pointer 被维护在 block header 中。
 
-![mpt](img/mpt.png)
+![mpt](img/16-ETH-5.png)
 **ETH Modified Merkle-Patricia-Trie System**
 
 ETH 使用 Modified Merkle Patricia Trie 主要是基于需要修改用户状态的考虑。如果像 BTC 一样直接使用 Merkle Tree，每次修改一个账户状态，所有节点上的 Merkle Tree 必须重构，但不同的节点可能会构造出不同的 Merkle Tree，导致数据不一致。这会为 Merkle Proof 带来困难。
 
-实际上，ETH 对账户的修改并非原地的，而是在新区块的 Modified Merkle Patricia Trie 写入更新后的分支，其他所有节点指向原来的地址。这是因为存在 roll back 的需求。
+实际上，ETH 对账户的修改并非原地的，而是在新区块的 Modified Merkle Patricia Trie 写入更新后的分支，其他所有节点指向原来的地址。这是因为存在 roll back 的需求，并且这样做不需要把整棵树发布，降低了网络负担。
 
-![ETH chain's block](img/ETH_chain.png)
+![ETH chain's block](img/16-ETH-6.png)
 **Updating For Modified Merkle Patricia Trie**
 
 ETH 区块内的交易记录与收据同样也被组织为 Modified Merkle Patricia Trie，它们的节点是一一对应的。
@@ -166,6 +187,25 @@ $$H_i' \equiv \max(H_i - 3,000,000)$$
 - 降低迁移到 PoS 协议时的分叉风险：当挖矿难度激增时，矿工有动力迁移至 PoS 协议。
 - 由真实区块号 $H_i$ 减去 $300$ 万得到（即 $H_i' = \max(H_i - 3,000,000)$）。  
 - 此设计源于低估 PoS 协议的开发难度，需延长约一年半的过渡期（通过 [EIP-100](https://eips.ethereum.org/EIPS/eip-100) 实现）。
+
+### PoS
+PoS 是 Proof-of-Stake 的缩写，是一种基于用户持有的代币数量来进行记账权分配的共识机制。基于 PoW 获得记账权广受诟病的一点是，需要大量的算力和能源，而这两者根本上是由资金大小决定的。因此，PoS 的一个核心想法是**直接通过资本金大小分配记账权**。
+
+而 PoS 则是基于用户持有的代币数量来进行记账权分配，用户持有的代币数量越多，获得记账权的概率就越大。
+
+这样做的第一个好处是降低了能源消耗，因为不需要大量的能源来维持挖矿的过程。同时，由于必须持有代币才能获得记账权，这使得在币种发行早期记账权被开发团队控制，也避免了 Altcoin Infanticide。
+
+ETH 准备采用的 PoS 协议是 Casper，它和 PoW 混合使用，为经过 PoW 验证的区块提供记 finality。获得 finality 状态的区块会成为合法链的部分，即使有恶意攻击使得与之平行的更长分支出现。
+
+在 Casper 协议中引入了 Validator 的概念，Validator 是指一些特殊的账户，它们可以行使投票权使得一个 epoch 获得 finality 状态。在 Casper 中，同一分支上的 50 个连续区块组成一个 epoch，每一轮投票作用于同一分支上的两个连续的 epoch。每次投票需要 2/3 的 Validator 同意才能通过；通过后，前一个 epoch 获得 commit message，后一个 epoch 获得 prepare message；只有获得 commit message 的 epoch 才能获得 finality。
+
+约束 Validator 的行为利用了 Validator Reward 和保证金制度。当 Validator 行为良好时会得到 Reward，反之则销毁一部分的保证金。设计上没有硬性限制 Validator 不可以为多个平行分支投票，但是一旦被发现其保证金会被没收。
+
+目前 PoS 协议还有许多需要解决的问题，PoW 仍然是主流。
+
+### 智能合约
+
+### Code is Law!!!
 
 
 
