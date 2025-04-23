@@ -46,6 +46,8 @@ block body 中主要保存了本区块的各种数据。BTC 链的 block body �
 
 ## 维护区块链的网络和共识机制
 
+## 如何保证所有节点都愿意在本地验证发布的区块是否有效？
+
 ---
 
 ## 挖矿
@@ -204,8 +206,161 @@ ETH 准备采用的 PoS 协议是 Casper，它和 PoW 混合使用，为经过 P
 目前 PoS 协议还有许多需要解决的问题，PoW 仍然是主流。
 
 ### 智能合约
+智能合约是保存在区块链中的代码，它定义了两个或者或者区块链账户的交易行为（如定义一个拍卖）。区块链上的账户分为两类：一类是**外部账户**，另一类是**合约账户**。合约用户可以看作一个为外部用户的交易服务的公正第三方；例如，一个定义了拍卖的合约，其合约账户可以看作拍卖行：对受益人来说，它是竞拍者的代理；对竞拍者来说，它是受益人的代理。在 ETH 的链上，智能合约用 Solidity 语言编写。对于同一输入，智能合约中的方法输出必须是不变的，故而**智能合约不支持并发/并行计算**。
+
+以下是一个智能合约的例子：
+```solidity
+pragma solidity ^0.4.21;
+
+contract SimpleAuction {
+    address public beneficiary; // 拍卖受益人
+    uint public auctionEnd;     // 结束时间
+
+    address public highestBidder; // 当前的最高出价人
+    mapping(address => uint) bids; // 所有竞拍者的出价
+    address[] bidders;             // 所有竞拍者
+
+    /// 需要记录的事件
+    event HighestBidIncreased(address bidder, uint amount);
+    event Pay2Beneficiary(address winner, uint amount);
+
+    /// 以受益者地址 `_beneficiary` 的名义，
+    /// 创建一个简单的拍卖，拍卖时间为 `_biddingTime` 秒。
+    constructor(uint _biddingTime, address _beneficiary) public {
+        beneficiary = _beneficiary;
+        auctionEnd = now + _biddingTime;
+    }
+
+    /// 对拍卖进行出价，随交易一起发送的ether与之前已经发送的
+    /// ether的和为本次出价。
+    function bid() public payable {
+        ...
+    }
+
+    /// 使用withdraw模式
+    /// 由投标者自己取回出价，返回是否成功
+    function withdraw() public returns (bool) {
+        ...
+    }
+
+    /// 结束拍卖，把最高的出价发送给受益人
+    function pay2Beneficiary() public returns (bool) {
+        ...
+    }
+}
+```
+一个用户若向出价，必须通过他的外部账户调用合约中的 `bid()` 方法。调用方法是创建一个交易，接收地址为要调用的那个智能合约的地址，data 域填写要调用的函数以及其参数的编码值。
+
+合约账户之间也可以相互调用，有直接调用，调用 `address.call()`, 代理调用 `delegatecall()` 三种方法。 
+
+1. 直接调用：
+```solidity
+contract A {
+    event LogCallFoo(string str);
+
+    function foo(string str) returns (uint) {
+        emit LogCallFoo(str);
+        return 123;
+    }
+}
+
+contract B {
+    uint ua;
+
+    function callAFooDirectly(address addr) public {
+        A a = A(addr);
+        ua = a.foo("call foo directly");
+    }
+}
+```
+
+- 如果在执行 `a.foo()` 过程中抛出错误，则 `callAFooDirectly()` 也抛出错误，本次调用全部回滚。
+- `ua` 为执行 `a.foo("call foo directly")` 的返回值。
+- 可以通过 `.gas()` 和 `.value()` 调整提供的 gas 数量或提供一些 ETH。
+
+2.调用 `address.call()`：
+
+```solidity
+contract C {
+    function callAfooByCall(address addr) public returns (bool) {
+        bytes4 funcsig = bytes4(keccak256("foo(string"));
+        if (addr.call(funcsig, "call foo by func call"))
+            return true;
+        return false;
+    }
+}
+```
+
+- 第一个参数被编码成4个字节，表示要调用的函数的签名。  
+- 其它参数会被扩展到32字节，表示要调用函数的参数。  
+- 上面的这个例子相当于 `A(addr).foo("call foo by func call")`。  
+- 返回一个布尔值，表明被调用的函数已经执行完毕（`true`）或者引发了一个EVM异常（`false`），无法获取函数返回值。  
+- 也可以通过 `.gas()` 和 `.value()` 调整提供的 gas 数量或提供一些 ETH。
+
+
+3.代理调用 `delegatecall()`：
+
+- 使用方法与 `call()` 相同，只是**不能使用 `.value()`**。  
+- **区别在于是否切换上下文**：  
+  - `call()` 切换到被调用的智能合约上下文中（包括存储、余额等属性）。  
+  - `delegatecall()` 只使用给定地址的**代码**，其他属性（存储、余额等）均取自当前合约。  
+  - 目的是复用其他合约的库代码，例如：通过 `delegatecall` 调用库合约中的函数，但操作当前合约的存储状态。
+
+定义智能合约时，有一类特殊的函数 `fallback()`。
+
+```solidity
+function() public [payable] {
+    ......
+}
+
+```
+这是一个匿名函数，没有参数也没有返回值。在以下两种情况下会被调用：
+- 直接向合约地址转账且不包含任何data。
+- 调用的函数在合约中不存在。
+
+如果转账金额不为零，必须声明为 payable，否则会抛出异常。
+
+接受转账的合约如果没有定义 `fallback()` 函数，会抛出异常。这一点可以被黑客利用，造成**灾难性的后果**，我们下面可以看到。
+  
+创建一个智能合约需要外部账户发起一个转账交易到 `0x0` 地址, 转账金额为 `0`，但需支付汽油费（gas），合约代码存放在交易的 `data` 域中。
+
+智能合约运行在 EVM（Ethereum Virtual Machine）上。这是为了保证智能合约可以跨平台运行。
+
+### gas fee
+执行合约中的每条指令均需支付汽油费，费用由交易发起者承担。gas fee 的获益人是将这个区块挖出的 miner（只有这一个 miner 可以获得汽油费），因为执行这些指令消耗的是这个 miner 拥有的算力。
+
+交易数据结构（txdata struct）：
+```go
+type txdata struct {
+    AccountNonce uint64          `json:"nonce"     gencodec:"required"`  
+    Price        *big.Int        `json:"gasPrice"  gencodec:"required"`  
+    GasLimit     uint64          `json:"gas"       gencodec:"required"`  
+    Recipient    *common.Address `json:"to"        rlp:"nil"`  // nil表示合约创建  
+    Amount       *big.Int        `json:"value"     gencodec:"required"`  
+    Payload      []byte          `json:"input"     gencodec:"required"`  
+}
+```
+EVM中不同指令的汽油费消耗差异：
+
+- 简单指令（如算术运算）消耗汽油费较低。
+- 复杂指令（如存储状态修改）消耗汽油费较高。
+- 设计合约时需优化代码，避免高成本操作以降低汽油费开销。
+
+设计 gas fee 是为了防止恶意调用合约中的方法，浪费计算资源。
+
+### 先执行交易还是先挖矿？
+挖矿需要当前 block header 的信息，这其中包括 ETH 的 block 中维护的状态树、交易树和收据树的根节点 hash。这些根节点 hash 需要先执行当前区块中的交易，才能够得到。所以是先交易，再挖矿。
+
+有人可能会说这样可能会导致互斥的交易同时进行，但是**只有发布的区块上的交易才是被认可的共识**。当另一个节点发布与本地节点的交易时，本地节点抛弃正在挖矿的这个区块。
+
+### 调用失败还要写入区块链吗？
+会。执行的调用 roll back 到何处是调用类型决定的。但 gas fee 是一定要交的，至少要在区块里面写入 gas fee 的信息。
+
 
 ### Code is Law!!!
+写入区块链的智能合约不可修改，即使这个智能合约存在验证逻辑漏洞。所以在写入区块链前，必须先对智能合约进行严格的调试。
+
+这里给出一个智能合约出现逻辑漏洞的例子。
 
 
 
