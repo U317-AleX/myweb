@@ -8,7 +8,6 @@
 XMU 本科在读，兴趣方向是分布式系统。
 
 email: [qingqianshui0@gmail.com](qingqianshui0@gmail.com)
-
 github: [https://github.com/U317-AleX](https://github.com/U317-AleX)
 
 ## 🧭 页面布局说明
