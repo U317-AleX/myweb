@@ -11,6 +11,11 @@ on:
     branches:
       - main
 # 工作流的具体内容
+
+# 给 GitHub Actions 赋予写权限
+permissions:
+  contents: write
+
 jobs: 
   deploy:
     # 创建一个新的云端虚拟机 使用最新Ubuntu系统
