@@ -117,6 +117,7 @@ Bloom Filter（布隆过滤器）是一种空间效率极高的概率型数据�
 Bloom Filter 使用，一个位数组（bit array），初始全为 0 以及 k 个独立哈希函数（如果其中一个 hash function 导致两个元素的发生 Hash Collision，我们能有另一个 hash function 使得它们不发生碰撞，这降低了 false positive 的概率）。
 
 插入元素：
+
 将元素输入到 k 个哈希函数中，得到 k 个位置，把位数组的这 k 个位置全部设置为 1。
 
 判断元素是否存在：
