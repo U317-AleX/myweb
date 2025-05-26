@@ -1,3 +1,27 @@
-- name: Install dependencies
-  run: |
-    pip install -r requirements.txt
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # 👈 你的默认分支
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build and deploy
+        run: |
+          mkdocs gh-deploy --force
