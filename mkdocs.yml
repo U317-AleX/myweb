@@ -2,6 +2,7 @@ site_name: U317-AleX's notes
 nav:
   - Home: index.md
   - BlockChain : block_chain.md
+  - DBMS: db_base.md
 theme: 
   name: material
   palette: 
