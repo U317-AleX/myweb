@@ -85,7 +85,7 @@ Host github.com
     User git
     Port 443
 "@ | Out-File -FilePath $env:USERPROFILE\.ssh\config -Encoding ascii -Force
-````
+```
 
 这样写入的文件就是干净的，无 `BOM`。
 
@@ -106,7 +106,7 @@ ssh -T -v git@github.com
 
 `Hi user_name! You've successfully authenticated...`
 
--  Git 测试
+####  Git 测试
 
 <!-- end list -->
 
