@@ -135,7 +135,8 @@ Windows 的 BOM 问题被解决。
 以下是使用 Ngrok 在只有 Linux CLI 的环境下进行内网穿透的完整步骤：
 
 ###  下载 Ngrok 压缩包
-    首先，你需要使用 `curl` 或 `wget` 命令下载 Ngrok 的 Linux 版本压缩包。
+
+首先，你需要使用 `curl` 或 `wget` 命令下载 Ngrok 的 Linux 版本压缩包。
 
 你可以直接访问 Ngrok 官网的下载链接。通常，它的格式为：`https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip`。
 
@@ -168,7 +169,8 @@ unzip ngrok-stable-linux-amd64.zip
 解压后，你会得到一个名为 `ngrok` 的可执行文件。
 
 ###  连接你的 Ngrok 账号
-    为了使用 Ngrok，你需要连接你的账号。这个步骤会使用你的认证令牌（Authtoken）。
+
+为了使用 Ngrok，你需要连接你的账号。这个步骤会使用你的认证令牌（Authtoken）。
 
 获取认证令牌：登录 Ngrok 官网（`ngrok.com`），在你的仪表盘上找到 “`Your Authtoken`” 页面。复制那里的认证令牌。
 
@@ -181,9 +183,8 @@ unzip ngrok-stable-linux-amd64.zip
 这个命令会在你的用户主目录下创建一个名为 `.ngrok2/ngrok.yml` 的配置文件，并保存你的认证信息。你只需运行一次即可。
 
 ### 启动内网穿透服务
-    假设你的本地服务正在 VPS 的 `8080` 端口上运行，你可以用以下命令启动 Ngrok，将这个端口暴露到公网。
 
-<!-- end list -->
+假设你的本地服务正在 VPS 的 `8080` 端口上运行，你可以用以下命令启动 Ngrok，将这个端口暴露到公网。
 
 ```bash
 ./ngrok http 8080
@@ -205,7 +206,8 @@ unzip ngrok-stable-linux-amd64.zip
 `Forwarding` 行中的 `https://...ngrok.io` 就是你的服务在公网上的地址。现在，你就可以在任何地方通过这个网址访问你的服务了。
 
 ###  在后台运行 Ngrok（可选）
-    如果你想让 Ngrok 在终端关闭后继续运行，可以利用 `nohup` 命令或者 `screen/tmux` 等工具。
+
+如果你想让 Ngrok 在终端关闭后继续运行，可以利用 `nohup` 命令或者 `screen/tmux` 等工具。
 
 使用 `nohup`：
 
