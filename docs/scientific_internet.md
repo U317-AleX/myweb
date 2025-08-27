@@ -97,7 +97,7 @@ ssh -T -v git@github.com
 
 如果成功，会看到：
 
-debug1: Reading configuration data C:\\Users\\Alex\\.ssh\\config
+debug1: Reading configuration data C:\\Users\\user_name\\.ssh\\config
 debug1: Hostname ssh.github.com port 443 user git
 
 
