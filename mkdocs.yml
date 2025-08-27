@@ -3,6 +3,7 @@ nav:
   - Home: index.md
   - BlockChain : block_chain.md
   - DBMS: db_base.md
+  -  Scientific Internet: scientific_internet.md
 theme: 
   name: material
   palette: 
