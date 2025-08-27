@@ -103,7 +103,7 @@ debug1: Hostname ssh.github.com port 443 user git
 
 并提示：
 
-Hi U317-AleX! You've successfully authenticated...
+Hi user_name! You've successfully authenticated...
 
 6. Git 测试
 git fetch origin
