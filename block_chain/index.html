@@ -1,0 +1,1473 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../db_base/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>BlockChain - U317-AleX's notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#block-chain" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="U317-AleX&#39;s notes" class="md-header__button md-logo" aria-label="U317-AleX's notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            U317-AleX's notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BlockChain
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="暗色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="暗色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="亮色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="亮色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="U317-AleX&#39;s notes" class="md-nav__button md-logo" aria-label="U317-AleX's notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    U317-AleX's notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    BlockChain
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    BlockChain
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      什么是区块链？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      区块链如何保证不能被篡改？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      区块链的共识机制
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      挖矿
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      验证
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merkle-proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merkle Proof
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eth" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETH
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ETH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eth_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETH 的数据结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloom-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom Filter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ghost" class="md-nav__link">
+    <span class="md-ellipsis">
+      GHOST
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eth_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETH 的挖矿算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eth_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETH 的挖矿难度调整策略
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pos" class="md-nav__link">
+    <span class="md-ellipsis">
+      PoS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      智能合约
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gas-fee" class="md-nav__link">
+    <span class="md-ellipsis">
+      gas fee
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      先执行交易还是先挖矿？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      调用失败还要写入区块链吗？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何保证所有节点都愿意在本地验证发布的区块是否有效？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-is-law" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code is Law
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dao" class="md-nav__link">
+    <span class="md-ellipsis">
+      The DAO 事件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beauty-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beauty Chain 事件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db_base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DBMS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scientific_internet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scientific Internet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      什么是区块链？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      区块链如何保证不能被篡改？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      区块链的共识机制
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      挖矿
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      验证
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merkle-proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      Merkle Proof
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eth" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETH
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ETH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eth_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETH 的数据结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloom-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom Filter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ghost" class="md-nav__link">
+    <span class="md-ellipsis">
+      GHOST
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eth_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETH 的挖矿算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eth_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETH 的挖矿难度调整策略
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pos" class="md-nav__link">
+    <span class="md-ellipsis">
+      PoS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      智能合约
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gas-fee" class="md-nav__link">
+    <span class="md-ellipsis">
+      gas fee
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      先执行交易还是先挖矿？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      调用失败还要写入区块链吗？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何保证所有节点都愿意在本地验证发布的区块是否有效？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-is-law" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code is Law
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dao" class="md-nav__link">
+    <span class="md-ellipsis">
+      The DAO 事件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beauty-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beauty Chain 事件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="block-chain">📚 Block Chain</h1>
+<p>此节笔记主要参考了 PKU 肖臻老师的《区块链技术与应用》公开课。</p>
+<p>肖臻老师的homepage：<a href="http://zhenxiao.com/">http://zhenxiao.com/</a></p>
+<p>公开课网址：<a href="https://www.bilibili.com/video/av37065233/">https://www.bilibili.com/video/av37065233/</a></p>
+<hr />
+<h2 id="_1">什么是区块链？</h2>
+<p>区块链是一种去中心化、分布式且通常是公共的数字分类账，由称为区块的记录组成，这些区块用于记录交易信息到多台电脑上，以便任何涉及的区块都不能被追溯更改，否则会影响后续的区块。</p>
+<p>从数据结构的角度看，区块链是一个单向链表，其中每个节点是一个区块而节点之间的指针采用 hash pointer。</p>
+<p>每个区块都包含两个部分：block header 以及 block body。</p>
+<p>block header 中主要维护了指向上一个区块的 block header 的 hash pointer，以及组织本区块数据的各种树的 root pointer。</p>
+<p>block body 中主要保存了本区块的各种数据。BTC 链的 block body 保存了本区区块的交易记录，而 ETH 链的 block body 保存了本区块的用户状态、交易记录以及收据。</p>
+<p><img alt="ETH chain's block" src="../img/ETH_chain.png" />
+<strong>ETH chain's block</strong></p>
+<p>区块链这个数据结构本身被维护在一个 P2P 的网络中，该网络拓扑有两类节点：全节点和轻节点。
+每个全节点保存区块链的一个完整副本，而每个轻节点只保存区块链所有 block header 的副本。当轻节点需要 block body 的信息是，它会请求全节点发送相应信息。</p>
+<hr />
+<h2 id="_2">区块链如何保证不能被篡改？</h2>
+<p>这得益于 hash pointer。所谓的 hash pointer 只是一种形象的说法，实际上 block header里只有哈希值，没有指针。</p>
+<p>那么怎么才能找到前一个区块的内容呢？全节点一般是把这些区块存储在一个 (key，value) 数据库里面。key 是区块的哈希，value就是区块的内容。一个常用的 key value 数据库是 level DB。所谓的区块链这种链表结构实际上是在 level DB 里面用哈希值算出来的。只要你掌握了最后一个区块的哈希值，那么你通过 level DB 的查找，哈希值 key 对应的 value 就可以把最后一个区块的内容取出来。然后这个区块块头里面，又有指向前一个区块的哈希值。那么再去查找 key 和 value，可以找到前一个区块的内容，以此类推，一步一步往前找，最终能够把整个区块链都找出来。</p>
+<p>所以说在实际系统当中，所谓的哈希指针，只有哈希，没有指针，或者也可以认为哈希值的本身就是指针。</p>
+<p>有一些节点没有保存完整的区块链的信息，只保存了最近的几千个区块，如果需要用到前面的区块的信息可以问其他的全节点要。哈希指针的性质保证了整个区块链的内容是不可篡改的。</p>
+<p>在验证的时候，<strong>节点会重新计算前一个区块的哈希值</strong>，然后把重新算出来的真实哈希 hash_actual 和当前区块里声明的 previous_hash 对比。</p>
+<p>你改了前一个区块，但后一个区块早就记着原来的哈希了，
+而验证的时候，<strong>用新的前区块内容重新算哈希 ➔ 新算出来的哈希值和后区块声明的值不一样 ➔ 对不上，验证失败。</strong></p>
+<hr />
+<h2 id="_3">区块链的共识机制</h2>
+<p><strong>共识机制（Consensus Mechanism）</strong>是指分布式系统如何就某一数据状态达成一致的协议。大多数需要对外展现出一致性的分布式系统都需要<strong>共识机制（Consensus Mechanism）</strong>或<strong>共识算法（Consensus Algorithm）</strong>来达成这一目标。比如 raft 集群需要使得每个节点的 state machine 和 log 保持一致，这时候就需要共识机制。</p>
+<p>区块链中常用的共识机制称为 <strong>Nakamoto 共识</strong>。Nakamoto 共识是一种基于 PoW（工作量证明） 的共识机制，通过“算力竞争”和“最长链规则”让区块链网络中的节点逐步收敛到一条唯一的有效区块链。</p>
+<p>Nakamoto 共识的核心要点有三个：</p>
+<ul>
+<li>
+<p><strong>工作量证明（PoW）</strong> 矿工通过计算大量哈希，寻找符合难度的区块哈希。首个找到有效哈希的矿工获得出块权，并获得区块奖励。</p>
+</li>
+<li>
+<p><strong>最长链规则</strong> 节点总是认为包含最多累计工作量（最长的链）是“正确链”。如果网络出现分叉，节点会暂时接受分叉，但最终会选最长链。</p>
+</li>
+<li>
+<p><strong>概率共识</strong> 由于网络延迟和随机因素，节点可能短暂产生分叉。随着时间推移，概率会越来越高达成一致（即区块被“确认”）。交易一般等待若干个区块后被视为最终确认（例如比特币通常等待6个区块确认）。</p>
+</li>
+</ul>
+<p>Nakamoto 共识具备一种“概率性拜占庭容错”特性，但严格来说它不是经典意义上的 BFT 协议。</p>
+<p>BFT 指的是系统即使有一部分节点（最多不到三分之一）作恶或表现出任意错误行为，整个系统仍能保证安全和一致性。经典 BFT 协议（如 PBFT）通过节点间多轮投票，严格保证一致性和容错，通常适合小规模、许可链环境。</p>
+<p>Nakamoto 共识基于 PoW，依赖算力多数原则，只要大多数算力（超过 50%）是诚实的，网络就能逐渐达成共识。它容忍恶意节点控制不到半数算力，能抵抗拜占庭故障（恶意作恶、双花攻击等）。但是，它不是通过传统投票达成一致，而是通过“最长链规则”和“概率最终性”来达成共识。</p>
+<p>在 Nakamoto 共识中，交易的最终确认是概率性的，新区块可能会被临时分叉或重组，确认数越多，交易被篡改的概率越低，但永远不为零。与经典 BFT 协议中“确定性最终性”（一旦确认就不可更改）不同。因此，Nakamoto 共识提供概率安全保障而非确定安全。</p>
+<p>共识机制使得只有可以提供 PoW 或者 PoS 的节点发布新区块。这是因为如果所有节点都能随意发布新区块，那么出现互斥交易时，整个系统不知道以哪一个为准，可能导致分布式系统一致性的丢失。PoW 或者 PoS 可以提供一种仲裁机制，表示一切以<strong>享有权益的节点写入的信息为准。</strong></p>
+<p>共识机制是分布式系统中一个核心而有趣的主题，这里也推荐读者了解一些其他分布式系统所用的共识机制：</p>
+<table>
+<thead>
+<tr>
+<th>共识算法</th>
+<th>类型</th>
+<th>典型应用</th>
+<th>主要特点及说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nakamoto 共识</strong></td>
+<td>PoW (工作量证明)</td>
+<td>比特币、以太坊1.0</td>
+<td>算力竞争，最长链规则，概率最终性</td>
+</tr>
+<tr>
+<td><strong>PBFT (Practical Byzantine Fault Tolerance)</strong></td>
+<td>BFT 投票机制</td>
+<td>Hyperledger Fabric、分布式数据库</td>
+<td>多轮投票，确定性最终性，容忍 &lt;1/3 恶意节点</td>
+</tr>
+<tr>
+<td><strong>Raft</strong></td>
+<td>非拜占庭容错一致性协议</td>
+<td>etcd、Consul、RethinkDB</td>
+<td>简单易理解，主要用于容错复制，不容忍拜占庭错误</td>
+</tr>
+<tr>
+<td><strong>Paxos</strong></td>
+<td>非拜占庭容错一致性协议</td>
+<td>Google Chubby、Zookeeper</td>
+<td>理论基础，复杂实现，保证一致性</td>
+</tr>
+<tr>
+<td><strong>Tendermint</strong></td>
+<td>BFT + PoS</td>
+<td>Cosmos 生态链</td>
+<td>结合 PBFT 投票流程，快速确定性最终性</td>
+</tr>
+<tr>
+<td><strong>Algorand</strong></td>
+<td>BFT + PoS</td>
+<td>Algorand 公链</td>
+<td>随机抽样验证者，快速且安全</td>
+</tr>
+<tr>
+<td><strong>Honey Badger BFT</strong></td>
+<td>异步 BFT</td>
+<td>私链和公链研究</td>
+<td>异步容错，消息传递不依赖时间假设</td>
+</tr>
+<tr>
+<td><strong>Proof of Stake (PoS)</strong></td>
+<td>权益证明</td>
+<td>以太坊2.0、Cardano、Polkadot</td>
+<td>通过锁定代币参与共识，节能高效</td>
+</tr>
+<tr>
+<td><strong>Delegated Proof of Stake (DPoS)</strong></td>
+<td>权益证明变种</td>
+<td>EOS、Tron</td>
+<td>投票选出代表节点，提高效率</td>
+</tr>
+<tr>
+<td><strong>Ripple Consensus Protocol</strong></td>
+<td>联邦共识</td>
+<td>Ripple</td>
+<td>联邦投票机制，低延迟，适合金融应用</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">挖矿</h2>
+<p>并非所有的节点都能向区块链上添加新的块，只有提供了 PoW 或 PoS 以此获得了<strong>记账权</strong>的节点有权向区块链添加新的区块。
+而获得 PoW （往往伴随着 block reward）的方法称之为挖矿。</p>
+<p>挖矿的逻辑是，miner 需要不断调整一个叫做 block header 中的 nonce 的参数，使得一个复杂的 hash function 对 block header 作用后的输出小于规定的 target 值。 在申请提交区块时，miner 将这个 nonce 参数写入 block header，维护区块链的节点会验证这个 nonce 是否使得 hash function 的输出小于 target。如果确实小于 target，发布这个区块。</p>
+<p>由于尝试的 nonce 是随机的，所以<strong>挖矿本身是无记忆的</strong>。也就是说已经尝试的 nonce 数量，和找到一个小于 target 的哈希值的概率无关。</p>
+<hr />
+<h2 id="_5">验证</h2>
+<p>验证包括工作量的验证：验证 block header 的哈希值是否小于 target，如通过说明 PoW 有效。</p>
+<p>以及交易合法性的验证：</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>条件</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>所有输入都引用了真实存在且未被花费的交易输出（UTXO）</td>
+<td>防止双花</td>
+</tr>
+<tr>
+<td>2</td>
+<td>签名（解锁脚本）合法，满足被引用输出的锁定条件</td>
+<td>验证“你有权花”</td>
+</tr>
+<tr>
+<td>3</td>
+<td>输入金额 ≥ 输出金额（不多发币）</td>
+<td>确保总量守恒</td>
+</tr>
+<tr>
+<td>4</td>
+<td>没有结构性错误（交易大小、字段合法）</td>
+<td>格式正确</td>
+</tr>
+<tr>
+<td>5</td>
+<td>如果是 coinbase 交易，奖励不能超出上限</td>
+<td>防止矿工自肥</td>
+</tr>
+</tbody>
+</table>
+<p>由于只有全节点有 UTXO 所以交易合法性验证必须由全节点而不是轻节点完成。</p>
+<p>上面两个验证任何一个没通过，接收节点维护的链都不会接受这个区块。</p>
+<hr />
+<h2 id="merkle-proof">Merkle Proof</h2>
+<p>Merkle Proof 是在区块链中，轻节点用来证明某个交易确实存在的一种手段。它是 SPV（Simplified Payment Verification） 的实现基础。</p>
+<p>Merkle Proof 的功能：</p>
+<table>
+<thead>
+<tr>
+<th>能做的事情</th>
+<th>不能做的事情</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✔ 证明某笔交易存在于某个区块中</td>
+<td>✘ 验证交易本身是否合法（签名、输入是否未花费等）</td>
+</tr>
+<tr>
+<td>✔ 轻节点（SPV钱包）用来快速确认交易存在</td>
+<td>✘ 验证交易是否被双花或未被花费（UTXO验证）</td>
+</tr>
+</tbody>
+</table>
+<p>为什么需要 Merkle Proof：</p>
+<p>轻节点（SPV钱包）没有能力下载和验证所有交易和区块，只下载区块头（只有区块头才包含 Merkle Root）。当它想确认某笔交易是否被网络接受时，它向全节点请求这笔交易的 Merkle Proof。用这个证明，轻节点能“快速确认”这笔交易确实存在于某个区块，保证这笔交易不是伪造的。</p>
+<p>当用户查询某笔交易是否被确认时，轻节点通过请求 Merkle Proof，验证交易确实包含在某区块中。用户指定的查询信息，实际上是从 root 节点到相应叶子节点的链路上的所有 hash pointer。轻节点将给定的 hash pointer 与向全节点请求得到的兄弟hash pointer 组合，自底向上计算出最终的实际根节点的 atul_hash 并和自己 block header 中维护的根节点 hash 对比。若两者相等，验证通过；反之不通过。</p>
+<p>下面的展示的是一个轻节点进行 Merkle Proof 的过程。</p>
+<p><img alt="mpt" src="../img/merkle_proof-1.png" />
+<img alt="mpt" src="../img/merkle_proof-2.png" />
+<img alt="mpt" src="../img/merkle_proof-3.png" />
+<img alt="mpt" src="../img/merkle_proof-4.png" />
+<strong>A Merkle Proof in Light Node</strong></p>
+<hr />
+<h2 id="eth">ETH</h2>
+<h3 id="eth_1">ETH 的数据结构</h3>
+<p>ETH 的数据结构主要有两种：Block Chain 以及 Modified Merkle Patricia Trie。</p>
+<p>这里主要讨论 Modified Merkle Patricia Trie。简单地讲，Modified Merkle Patricia Trie 是改良后的 Merkle Patricia Trie， 而 Merkle Patricia Trie 就是使用 hash pointer 的 Radix Tree。</p>
+<p>不同于 BTC 只在 block body 中维护交易的内容，ETH 显式地在 block body 中维护账户状态，交易以及收据三种信息。这三种信息被组织成 Merkle Patricia Trie，其 root pointer 被维护在 block header 中。</p>
+<p><img alt="mpt" src="../img/16-ETH-5.png" />
+<strong>ETH Modified Merkle-Patricia-Trie System</strong></p>
+<p>ETH 使用 Modified Merkle Patricia Trie 主要是基于需要修改用户状态的考虑。如果像 BTC 一样直接使用 Merkle Tree，每次修改一个账户状态，所有节点上的 Merkle Tree 必须重构，但不同的节点可能会构造出不同的 Merkle Tree，导致数据不一致。这会为 Merkle Proof 带来困难。</p>
+<p>实际上，ETH 对账户的修改并非原地的，而是在新区块的 Modified Merkle Patricia Trie 写入更新后的分支，其他所有节点指向原来的地址。这是因为存在 roll back 的需求，并且这样做不需要把整棵树发布，降低了网络负担。</p>
+<p><img alt="ETH chain's block" src="../img/16-ETH-6.png" />
+<strong>Updating For Modified Merkle Patricia Trie</strong></p>
+<p>ETH 区块内的交易记录与收据同样也被组织为 Modified Merkle Patricia Trie，它们的节点是一一对应的。</p>
+<h3 id="bloom-filter">Bloom Filter</h3>
+<p>Bloom Filter（布隆过滤器）是一种空间效率极高的概率型数据结构，用于快速判断一个元素是否“可能存在”于一个集合中。它常用于网络安全、区块链、数据库、搜索引擎等对性能要求高的场景。</p>
+<p>它有如下特点：</p>
+<ul>
+<li>能判断元素可能在集合中；</li>
+<li>不能判断元素一定不在集合中；</li>
+<li>有一定误判率（假阳性 false positive）；</li>
+<li>不会有漏判（false negative）。</li>
+</ul>
+<p>Bloom Filter 使用，一个位数组（bit array），初始全为 0 以及 k 个独立哈希函数（如果其中一个 hash function 导致两个元素的发生 Hash Collision，我们能有另一个 hash function 使得它们不发生碰撞，这降低了 false positive 的概率）。</p>
+<p>插入元素：</p>
+<ul>
+<li>将元素输入到 k 个哈希函数中，得到 k 个位置，把位数组的这 k 个位置全部设置为 1。</li>
+</ul>
+<p>判断元素是否存在：</p>
+<ul>
+<li>用同样的 k 个哈希函数处理这个元素，如果所有对应的位都是 1 → 元素可能存在（但可能是误判）；</li>
+<li>如果任何一位是 0 → 元素一定不存在。</li>
+</ul>
+<p><strong>在删除一个元素时不能把它对应的 bits 重新置 0：</strong></p>
+<p>Bloom Filter 的每一位可能是多个元素通过哈希映射到的“共享位置”，比如元素 A 和 B 都把第 10 位设成了 1。如果你“删除”元素 A 并把第 10 位重置为 0，那元素 B 的存在信息也一起被抹掉了。</p>
+<p>在比特币等区块链中，SPV（Simplified Payment Verification）轻节点并不保存整个区块链，只下载区块头和相关交易。这时，Bloom Filter 就发挥作用：SPV 客户端可以创建一个 Bloom Filter，表示“我关心的地址/公钥哈希/交易输出”等。然后将这个 Bloom Filter 发送给全节点。全节点使用该过滤器只发送那些可能匹配该轻节点关心的交易。</p>
+<h3 id="ghost">GHOST</h3>
+<p>在区块链中，GHOST 机制（Greedy Heaviest-Observed Sub-Tree）是以太坊等链采用的一种改进的区块选择机制，旨在解决比特币原有最长链规则的效率问题，提高系统吞吐量和安全性。</p>
+<p>在比特币中，矿工总是选择“最长链”来继续挖矿。一旦两个区块几乎同时被挖出来，就会临时产生“分叉”。最终只有一条链会被认为是有效的，另一条链上的区块会成为“孤块”（orphan block），被丢弃。这样的做的问题是浪费计算资源，导致很多 miner 的工作白费。</p>
+<p>GHOST 机制的核心思想有两个：
+- 第一，与其只考虑最长链，不如考虑包含更多“有效工作”的链。在选择主链时，不仅看“哪条链最长”，而是选“工作量最大的子树”。
+- 第二，即使某些区块未直接在主链上，只要它们是诚实产生的，也会对主链选择产生影响。</p>
+<p>以太坊在早期版本中（Ethash 共识，PoW）引入了 GHOST 的简化版本：允许被“丢弃”的分支中的合法区块部分获得奖励。一个主链区块可以引用最多 2 个其他链上的 uncle blocks。miner 挖到 uncle block 也能获得部分 ETH 奖励，并且越早地被引用，得到的奖励越多。这个机制能鼓励那些没有成为主链编写者的 miner 尽早合并到主链上，减小了 ETH 分叉的风险。</p>
+<h3 id="eth_2">ETH 的挖矿算法</h3>
+<p>为了防止 ASIC 芯片的滥用，ETH 设计了 Memory Hard Miner Puzzle（ASIC miner 的计算性能远高于普通个人电脑，但访存速度却没有这种优势）。其主要思想是让 miner 在运行 hash function 时需要维护一个大的数组，通过大量访存时间来稀释计算时间上的优势。</p>
+<p>计算 ETH 的 hash 需要一个 16M 的 cache 数组以及一个 1G 的 DAG 数组（需要的 cache 和 DAG 的大小还会随着时间增长）。</p>
+<p>cache 通过 cache[0] 位置上的 seed 元素不断往后进行 hash function 的递推生成。
+$$
+cache_0 = seed,
+$$
+$$
+cache_n = hash(cache_{n-1})
+$$</p>
+<p>DAG 的每个位置由伪随机挑选的 256 个 cache 中的元素生成。最后，从 DAG 中挑选 128 个元素（和 nonce 相关）生成 hash function 的输出。</p>
+<p>miner 挖矿时需维护 cache 和 DAG，而进行验证的轻节点只需要维护 cache，动态生成所需要的 DAG 元素。这样做的好处是使得 miner 有 memory hard 的同时，轻节点验证不出现此问题。</p>
+<h3 id="eth_3">ETH 的挖矿难度调整策略</h3>
+<p>ETH 进行挖矿难度的主要作用是稳定出块速度以及稳定货币供给量， 挖矿难度 <span class="arithmatex">\(diff\)</span> 与 miner puzzle 的 <span class="arithmatex">\(target\)</span> 负相关。每个区块的挖矿难度基于以下公式：</p>
+<div class="arithmatex">\[
+D(H) \equiv 
+\begin{cases}
+D_0, &amp; \text{if } H_i = 0 \\
+\max\left( D_0, P(H)_{H_d} + x \times \zeta_2 \right) + \epsilon, &amp; \text{otherwise}
+\end{cases}
+\]</div>
+<p><span class="arithmatex">\(where：\)</span></p>
+<div class="arithmatex">\[
+D_0 \equiv 131072
+\]</div>
+<ul>
+<li><span class="arithmatex">\(H_i\)</span> 是本区块序号。</li>
+<li><span class="arithmatex">\(D(H)\)</span> 是本区块的难度，由基础部分 <span class="arithmatex">\(P(H)_{H_d} + x \times \zeta_2\)</span> 和难度炸弹部分 <span class="arithmatex">\(\epsilon\)</span> 相加得到。</li>
+<li><span class="arithmatex">\(P(H)_{H_d}\)</span> 是父区块的难度，每个区块的难度都是在父区块难度的基础上进行调整。</li>
+<li><span class="arithmatex">\(x \times \zeta_2\)</span> 用于自适应调节出块难度，维持稳定的出块速度。</li>
+<li><span class="arithmatex">\(\epsilon\)</span> 表示设定的难度炸弹，其作用是在一段时间后使得挖矿难度爆炸，迫使 PoW 向 PoS 转型。</li>
+<li>基础部分有下界，为最小值 <span class="arithmatex">\(D_0 = 131072\)</span>。</li>
+</ul>
+<p>自适应难度调整 <span class="arithmatex">\(x \times \zeta_2\)</span>:</p>
+<div class="arithmatex">\[
+x \equiv \left\lfloor \frac{P(H)_{H_d}}{2048} \right\rfloor
+\quad
+\]</div>
+<div class="arithmatex">\[
+\zeta_2 \equiv \max\left( y - \left\lfloor \frac{H_s - P(H)_{H_s}}{9} \right\rfloor, -99 \right)
+\quad
+\]</div>
+<ul>
+<li><span class="arithmatex">\(x\)</span> 是调整的粒度，<span class="arithmatex">\(\zeta_2\)</span> 为调整的系数。</li>
+<li><span class="arithmatex">\(y\)</span> 和父区块的 uncle 数有关。如果父区块中包括了 uncle，则 <span class="arithmatex">\(y\)</span> 为 2，否则为 1。</li>
+<li>父块包含 uncle 时，难度会大一个单位，因为包含 uncle 时新发行的货币量大，需要适当提高难度以保持货币发行量稳定。</li>
+<li>难度降低的上界设置为 <span class="arithmatex">\(-99\)</span>，主要是应对被黑客攻击或其他目前想不到的黑天鹅事件。</li>
+</ul>
+<div class="arithmatex">\[
+y - \left\lfloor \frac{H_S - P(H)_{H_S}}{9} \right\rfloor
+\]</div>
+<ul>
+<li><span class="arithmatex">\(H_S\)</span> 是本区块的时间戳，<span class="arithmatex">\(P(H)_{H_S}\)</span> 是父区块的时间戳，均以秒为单位，并规定 <span class="arithmatex">\(H_S &gt; P(H)_{H_S}\)</span> 。<span class="arithmatex">\(H_S - P(H)_{H_S}\)</span> 就是出块时间。</li>
+<li>
+<p>该部分是稳定出块速度的最重要部分：出块时间过短则调大难度，出块时间过长则调小难度。</p>
+</li>
+<li>
+<p>以父块不带 uncle 的情况（<span class="arithmatex">\(y=1\)</span>）为例：</p>
+</li>
+<li>出块时间在 <span class="arithmatex">\([1,8]\)</span> 之间，出块时间过短，难度调大一个单位。</li>
+<li>出块时间在 <span class="arithmatex">\([9,17]\)</span> 之间，出块时间可以接受，难度保持不变。</li>
+<li>相差时间在 <span class="arithmatex">\([18,26]\)</span> 之间，出块时间过长，难度调小一个单位。</li>
+</ul>
+<p>难度炸弹 <span class="arithmatex">\(\epsilon\)</span>:</p>
+<div class="arithmatex">\[\epsilon \equiv \left\lfloor 2^{\left\lfloor \frac{H_i'}{100000} \right\rfloor - 2} \right\rfloor \]</div>
+<div class="arithmatex">\[H_i' \equiv \max(H_i - 3,000,000)\]</div>
+<ul>
+<li>每十万个区块扩大一倍，是 2 的指数函数，后期增长极快，因此被称为难度"炸弹"。</li>
+<li>降低迁移到 PoS 协议时的分叉风险：当挖矿难度激增时，矿工有动力迁移至 PoS 协议。</li>
+<li>由真实区块号 <span class="arithmatex">\(H_i\)</span> 减去 <span class="arithmatex">\(300\)</span> 万得到（即 <span class="arithmatex">\(H_i' = \max(H_i - 3,000,000)\)</span>）。  </li>
+<li>此设计源于低估 PoS 协议的开发难度，需延长约一年半的过渡期（通过 <a href="https://eips.ethereum.org/EIPS/eip-100">EIP-100</a> 实现）。</li>
+</ul>
+<h3 id="pos">PoS</h3>
+<p>PoS 是 Proof-of-Stake 的缩写，是一种基于用户持有的代币数量来进行记账权分配的共识机制。基于 PoW 获得记账权广受诟病的一点是，需要大量的算力和能源，而这两者根本上是由资金大小决定的。因此，PoS 的一个核心想法是<strong>直接通过资本金大小分配记账权</strong>。</p>
+<p>而 PoS 则是基于用户持有的代币数量来进行记账权分配，用户持有的代币数量越多，获得记账权的概率就越大。</p>
+<p>这样做的第一个好处是降低了能源消耗，因为不需要大量的能源来维持挖矿的过程。同时，由于必须持有代币才能获得记账权，这使得在币种发行早期记账权被开发团队控制，也避免了 Altcoin Infanticide。</p>
+<p>ETH 准备采用的 PoS 协议是 Casper，它和 PoW 混合使用，为经过 PoW 验证的区块提供记 finality。获得 finality 状态的区块会成为合法链的部分，即使有恶意攻击使得与之平行的更长分支出现。</p>
+<p>在 Casper 协议中引入了 Validator 的概念，Validator 是指一些特殊的账户，它们可以行使投票权使得一个 epoch 获得 finality 状态。在 Casper 中，同一分支上的 50 个连续区块组成一个 epoch，每一轮投票作用于同一分支上的两个连续的 epoch。每次投票需要 2/3 的 Validator 同意才能通过；通过后，前一个 epoch 获得 commit message，后一个 epoch 获得 prepare message；只有获得 commit message 的 epoch 才能获得 finality。</p>
+<p>约束 Validator 的行为利用了 Validator Reward 和保证金制度。当 Validator 行为良好时会得到 Reward，反之则销毁一部分的保证金。设计上没有硬性限制 Validator 不可以为多个平行分支投票，但是一旦被发现其保证金会被没收。</p>
+<p>目前 PoS 协议还有许多需要解决的问题，PoW 仍然是主流。</p>
+<h3 id="_6">智能合约</h3>
+<p>智能合约是保存在区块链中的代码，它定义了两个或者或者区块链账户的交易行为（如定义一个拍卖）。区块链上的账户分为两类：一类是<strong>外部账户</strong>，另一类是<strong>合约账户</strong>。合约用户可以看作一个为外部用户的交易服务的公正第三方；例如，一个定义了拍卖的合约，其合约账户可以看作拍卖行：对受益人来说，它是竞拍者的代理；对竞拍者来说，它是受益人的代理。在 ETH 的链上，智能合约用 Solidity 语言编写。对于同一输入，智能合约中的方法输出必须是不变的，故而<strong>智能合约不支持并发/并行计算</strong>。</p>
+<p>以下是一个智能合约的例子：</p>
+<pre><code class="language-solidity">pragma solidity ^0.4.21;
+
+contract SimpleAuction {
+    address public beneficiary; // 拍卖受益人
+    uint public auctionEnd;     // 结束时间
+
+    address public highestBidder; // 当前的最高出价人
+    mapping(address =&gt; uint) bids; // 所有竞拍者的出价
+    address[] bidders;             // 所有竞拍者
+
+    /// 需要记录的事件
+    event HighestBidIncreased(address bidder, uint amount);
+    event Pay2Beneficiary(address winner, uint amount);
+
+    /// 以受益者地址 `_beneficiary` 的名义，
+    /// 创建一个简单的拍卖，拍卖时间为 `_biddingTime` 秒。
+    constructor(uint _biddingTime, address _beneficiary) public {
+        beneficiary = _beneficiary;
+        auctionEnd = now + _biddingTime;
+    }
+
+    /// 对拍卖进行出价，随交易一起发送的ether与之前已经发送的
+    /// ether的和为本次出价。
+    function bid() public payable {
+        ...
+    }
+
+    /// 使用withdraw模式
+    /// 由投标者自己取回出价，返回是否成功
+    function withdraw() public returns (bool) {
+        ...
+    }
+
+    /// 结束拍卖，把最高的出价发送给受益人
+    function pay2Beneficiary() public returns (bool) {
+        ...
+    }
+}
+</code></pre>
+<p>一个用户若向出价，必须通过他的外部账户调用合约中的 <code>bid()</code> 方法。调用方法是创建一个交易，接收地址为要调用的那个智能合约的地址，data 域填写要调用的函数以及其参数的编码值。</p>
+<p>合约账户之间也可以相互调用，有直接调用，调用 <code>address.call()</code>, 代理调用 <code>delegatecall()</code> 三种方法。 </p>
+<ol>
+<li>直接调用：</li>
+</ol>
+<pre><code class="language-solidity">contract A {
+    event LogCallFoo(string str);
+
+    function foo(string str) returns (uint) {
+        emit LogCallFoo(str);
+        return 123;
+    }
+}
+
+contract B {
+    uint ua;
+
+    function callAFooDirectly(address addr) public {
+        A a = A(addr);
+        ua = a.foo(&quot;call foo directly&quot;);
+    }
+}
+</code></pre>
+<ul>
+<li>如果在执行 <code>a.foo()</code> 过程中抛出错误，则 <code>callAFooDirectly()</code> 也抛出错误，本次调用全部回滚。</li>
+<li><code>ua</code> 为执行 <code>a.foo("call foo directly")</code> 的返回值。</li>
+<li>可以通过 <code>.gas()</code> 和 <code>.value()</code> 调整提供的 gas 数量或提供一些 ETH。</li>
+</ul>
+<p>2.调用 <code>address.call()</code>：</p>
+<pre><code class="language-solidity">contract C {
+    function callAfooByCall(address addr) public returns (bool) {
+        bytes4 funcsig = bytes4(keccak256(&quot;foo(string&quot;));
+        if (addr.call(funcsig, &quot;call foo by func call&quot;))
+            return true;
+        return false;
+    }
+}
+</code></pre>
+<ul>
+<li>第一个参数被编码成4个字节，表示要调用的函数的签名。  </li>
+<li>其它参数会被扩展到32字节，表示要调用函数的参数。  </li>
+<li>上面的这个例子相当于 <code>A(addr).foo("call foo by func call")</code>。  </li>
+<li>返回一个布尔值，表明被调用的函数已经执行完毕（<code>true</code>）或者引发了一个EVM异常（<code>false</code>），无法获取函数返回值。  </li>
+<li>也可以通过 <code>.gas()</code> 和 <code>.value()</code> 调整提供的 gas 数量或提供一些 ETH。</li>
+</ul>
+<p>3.代理调用 <code>delegatecall()</code>：</p>
+<ul>
+<li>使用方法与 <code>call()</code> 相同，只是<strong>不能使用 <code>.value()</code></strong>。  </li>
+<li><strong>区别在于是否切换上下文</strong>：  </li>
+<li><code>call()</code> 切换到被调用的智能合约上下文中（包括存储、余额等属性）。  </li>
+<li><code>delegatecall()</code> 只使用给定地址的<strong>代码</strong>，其他属性（存储、余额等）均取自当前合约。  </li>
+<li>目的是复用其他合约的库代码，例如：通过 <code>delegatecall</code> 调用库合约中的函数，但操作当前合约的存储状态。</li>
+</ul>
+<p>定义智能合约时，有一类特殊的函数 <code>fallback()</code>。</p>
+<pre><code class="language-solidity">function() public [payable] {
+    ......
+}
+
+</code></pre>
+<p>这是一个匿名函数，没有参数也没有返回值。在以下两种情况下会被调用：
+- 直接向合约地址转账且不包含任何data。
+- 调用的函数在合约中不存在。</p>
+<p>如果转账金额不为零，必须声明为 payable，否则会抛出异常。</p>
+<p>接受转账的合约如果没有定义 <code>fallback()</code> 函数，会抛出异常。这一点可以被黑客利用，造成<strong>灾难性的后果</strong>，我们下面可以看到。</p>
+<p>创建一个智能合约需要外部账户发起一个转账交易到 <code>0x0</code> 地址, 转账金额为 <code>0</code>，但需支付汽油费（gas），合约代码存放在交易的 <code>data</code> 域中。</p>
+<p>智能合约运行在 EVM（Ethereum Virtual Machine）上。这是为了保证智能合约可以跨平台运行。</p>
+<h3 id="gas-fee">gas fee</h3>
+<p>执行合约中的每条指令均需支付汽油费，费用由交易发起者承担。gas fee 的获益人是将这个区块挖出的 miner（只有这一个 miner 可以获得汽油费），因为执行这些指令消耗的是这个 miner 拥有的算力。</p>
+<p>交易数据结构（txdata struct）：</p>
+<pre><code class="language-go">type txdata struct {
+    AccountNonce uint64          `json:&quot;nonce&quot;     gencodec:&quot;required&quot;`  
+    Price        *big.Int        `json:&quot;gasPrice&quot;  gencodec:&quot;required&quot;`  
+    GasLimit     uint64          `json:&quot;gas&quot;       gencodec:&quot;required&quot;`  
+    Recipient    *common.Address `json:&quot;to&quot;        rlp:&quot;nil&quot;`  // nil表示合约创建  
+    Amount       *big.Int        `json:&quot;value&quot;     gencodec:&quot;required&quot;`  
+    Payload      []byte          `json:&quot;input&quot;     gencodec:&quot;required&quot;`  
+}
+</code></pre>
+<p>EVM中不同指令的汽油费消耗差异：</p>
+<ul>
+<li>简单指令（如算术运算）消耗汽油费较低。</li>
+<li>复杂指令（如存储状态修改）消耗汽油费较高。</li>
+<li>设计合约时需优化代码，避免高成本操作以降低汽油费开销。</li>
+</ul>
+<p><strong>设计 gas fee 是为了防止恶意调用合约中的方法，浪费计算资源。</strong>gas fee 策略的失败导致了 ETH 维护团队在 The DAO 事件中的软分叉策略失效，我们之后将会看到。</p>
+<p>智能合约中不存在自定义的 try-catch 结构，一旦遇到未捕获的异常，本次所有操作将完全回滚（除非使用 call 等低级函数）。</p>
+<p>错误抛出方式：<code>assert(bool condition)</code>，用于检测内部错误（例如不变量违反）；<code>require(bool condition, string message)</code>用于验证输入或外部条件（如函数前置条件；<code>revert(string message)</code>，直接终止执行并回滚状态，可自定义错误信息。</p>
+<p>嵌套调用的回滚，如合约 A 调用合约 B 的函数（如通过 call/delegatecall）：</p>
+<ul>
+<li>
+<p>若使用高层级调用（如直接调用 B.foo()），被调用合约 B 的异常会触发合约 A 的完全回滚。</p>
+</li>
+<li>
+<p>若使用底层调用（如 B.call(abi.encodeWithSignature("foo()"))），异常仅返回 false，合约 A 的状态修改可能保留。</p>
+</li>
+</ul>
+<p>一个合约直接向一个合约帐户里转账，没有指明调用哪个函数，仍然会引起嵌套调用（<code>fallback()</code>函数）。</p>
+<p>智能合约运行在区块环境中，它只能获得区块提供的环境变量。</p>
+<h3 id="_7">先执行交易还是先挖矿？</h3>
+<p>挖矿需要当前 block header 的信息，这其中包括 ETH 的 block 中维护的状态树、交易树和收据树的根节点 hash。这些根节点 hash 需要先执行当前区块中的交易，才能够得到。所以是先交易，再挖矿。</p>
+<p>有人可能会说这样可能会导致逻辑冲突的交易同时进行，但是<strong>只有发布的区块上的交易才是被认可的共识</strong>。当另一个节点发布与本地节点的交易冲突时，本地节点抛弃正在挖矿的这个区块。</p>
+<h3 id="_8">调用失败还要写入区块链吗？</h3>
+<p>会。若在调用过程中发生异常，本次调用会 roll back 。但 gas fee 是一定要交的，至少要在区块里面写入 gas fee 的信息。</p>
+<h3 id="_9">如何保证所有节点都愿意在本地验证发布的区块是否有效？</h3>
+<p>在其他节点发布一个新区块时，本地节点验证新区块的工作量是需要计算资源的。而且拥有本地节点的 miner 也得不到验证的 gas fee。为什么他们还是愿意验证这些交易而不是直接写入本地区块链呢？</p>
+<p>这和 root hash 的验证有关系。假设这个 miner 不验证就直接把这个区块添加到区块链上，如果这个区块中的交易的不合法的，那么这个 miner 所拥有节点上记录的三棵 Merkel Tree 的 root hash 就和其他老实验证 miner 所拥有的节点上记录的 root hash 分道扬镳了。如果不出意外，<strong>那么这个不老实的 miner 所发布的区块就永远通不过验证了。</strong> </p>
+<h3 id="code-is-law">Code is Law</h3>
+<p>写入区块链的智能合约不可修改，即使这个智能合约存在验证逻辑漏洞。所以在写入区块链前，必须先对智能合约进行严格的调试。</p>
+<p>这里给出一些智能合约出现逻辑漏洞的例子。我们从一个简单的拍卖开始：</p>
+<pre><code class="language-solidity">pragma solidity ^0.4.21
+
+contract SimpleAuctionV1{
+    address public beneficiary;     // 拍卖受益人
+    uint public auctionEnd;         // 结束时间
+    address public highestBidder;   // 当前的最高出价人
+    mapping(address =&gt; unit) bids;  // 所有竞拍者的出价
+    address[] bidders;              // 所有竞拍者
+    bool ended;                     // 拍卖结束后设为 true
+
+    // 需要记录的事件
+    event HighestBidIncreased(address bidder, unit amount);
+    event AuctionEnded(address winner, unit amount);
+
+    // 以受益人地址 `_beneficiary` 的名义，
+    // 创建一个简单的拍卖，拍卖时间为 `_biddingTime` 秒。
+    // 这是一个拍卖实例的构造函数
+    constructor(unit _biddingTime, address _beneficiary) public {
+        beneficiary = _beneficiary;
+        auctionEnd = now  + _biddingTime;
+    }
+
+    // 对拍卖出价
+    // 随交易一起发送的 ether 与之前已经发送的 ether 的和为本次出价
+    function bid() public payable {
+        // 对于能接收 ether 的函数，关键字 payable 是必须的。
+
+        // 执行条件：拍卖未结束
+        require(now &lt;= auctionEnd);
+        // 如果出价不够高，本次出价无效，直接返回报错
+        require(bids[msg.sender] + msg.value &gt; bids[highestBidder]);
+
+        // 如果此人之前未出价，则加入竞拍者列表
+        if(!bids[msg.sender] == uint(0)) {
+            bidder.push(msg.sender);
+        }
+
+        // 本次出价是当前最高出价，更新最高出价
+        highestBidder = msg.sender;
+        bids[msg.sender] += msg.value;
+        emit HighestBidIncreased(msg.sender, bids[msg.sender]);
+    }
+
+    // 结束拍卖，把最高的出价发送给受益人， 
+    // 并把未中标的出价者的钱返还
+    function auctionEnd() public {
+        // 执行条件，拍卖已经截止
+        require(now &gt; auctionEnd);
+        // 执行条件，该函数未被调用过
+        require(!ended);
+
+        // 把最高出价发送给受益人
+        beneficiary.transfer(bid[highestBidder]);
+        for (uint i = 0; i &lt; bidders.length; i ++) {
+            address bidder = bidder[i];
+            if (bidder == highestBidder) continue;
+            bidder.transfer(bids[bidder]);
+        }
+    } 
+}
+</code></pre>
+<p>这个合约有一个问题，所有未中标的出价者的钱返还都写在函数 <code>auctionEnd()</code> 中。假设某个出价账户是一个合约账户，我们提到过，它作为 <code>bidder.transfer(bids[bidder])</code> 的接收者必须定义 <code>fallback()</code> 函数，不然会发生异常。
+如果就有一个这样的账户，那么 <code>auctionEnd()</code> 函数执行到此处时会将整个函数 roll back，<strong>所有人的钱都取不出了！</strong>
+<strong>而且合约的规则是不可更改的，我们对此无能为力。</strong></p>
+<p>我们将返还未中标者的钱的逻辑分离，由竞拍者自己调用相应的函数：</p>
+<pre><code class="language-solidity">pragma solidity ^0.4.21
+
+contract SimpleAuctionV2{
+  .
+  .
+  .
+
+  // 使用 withdraw 模式，
+  // 由投标者自己取回出价，返回是否成功
+  function withdraw() public return (bool) {
+    // 执行条件：拍卖已截止
+    require(now &gt; auctionEnd);
+    // 竞拍成功者需要把钱给受益人，不可取回出价
+    require(msg.sender != highestBidder);
+    // 需要这个地址有钱可取
+    require(bids[msg.sender] &gt; 0);
+
+    uint amount = bids[msg.sender];
+    if (msg.sender.call.value(amount)()) {
+        bids[msg.sender] = 0;
+        return true;
+    }
+
+    return false;
+  }
+
+  event Pay2Beneficiary(address winner, uint amount);
+  // 拍卖结束，把最高出价发送给受益人
+  function pay2Beneficiary() public return (bool) {
+    // 执行条件：拍卖已截止
+    require(now &gt; auctionEnd);
+    // 需要这个地址有钱可取
+    require(bids[highestBidder] &gt; 0);
+
+    uint amount = bids[highestBidder];
+    bids[highestBidder] = 0;
+    emit Pay2Beneficiary(highestBidder, amount);
+
+    if (!beneficiary.call.value(amount)()) {
+        bids[highestBidder] = amount;
+        return false;
+    }
+
+    return true;
+  }
+}
+</code></pre>
+<p>但这个修改后的方案仍然存在巨大的错误，因为它无法抵抗重入攻击（Re-entrancy Attack）。当合约账户收到 ETH 但未调用函数时，会立即执行 <code>fallback()</code> 函数，<code>addr.send()</code> 、<code>addr.transfer()</code>、<code>addr.call.value()()</code> 三种支付方式都会导致收款账户上的 <code>fallback()</code> 函数被调用，而这个 <code>fallback()</code> 函数是用户自己定义的。</p>
+<p>在上面的例子中，如果这个用户在自己的 <code>fallback()</code> 函数中再次调用合约的 <code>withdraw()</code> 函数，由于改变合约记录的语句 <code>bids[msg.sender] = 0;</code> 写在实际支付的语句 <code>msg.sender.call.value(amount)()</code> 之后，所以 <code>fallback()</code> 函数中对 <code>withdraw()</code> 函数的任何一次调用都会通过 <code>require(bids[msg.sender] &gt; 0);</code> 的检查。<strong>收款方将会不断地受到来自合约账户的转账直到函数调用栈溢出或合约账户的余额被耗尽。</strong>这种攻击手段就是 Re-entrancy Attack。</p>
+<p>为了避免这类攻击，在编写智能合约时我们必须遵循一个原则，即<strong>内存中记录的修改必须发生在实际交易前</strong>：</p>
+<pre><code class="language-solidity">pragma solidity ^0.4.21
+
+contract SimpleAuctionV3{
+  .
+  .
+  .
+
+  // 使用 withdraw 模式，
+  // 由投标者自己取回出价，返回是否成功
+  function withdraw() public return (bool) {
+    // 执行条件：拍卖已截止
+    require(now &gt; auctionEnd);
+    // 竞拍成功者需要把钱给受益人，不可取回出价
+    require(msg.sender != highestBidder);
+    // 需要这个地址有钱可取
+    require(bids[msg.sender] &gt; 0);
+
+    uint amount = bids[msg.sender];
+    bids[msg.sender] = 0;
+    if (msg.sender.call.value(amount)()) {
+        return true;
+    }
+
+    bids[msg.sender] = amount;
+    return false;
+  }
+
+  .
+  .
+  .
+}
+</code></pre>
+<h3 id="the-dao">The DAO 事件</h3>
+<p>对 The DAO 合约的 Re-entrancy Attack 导致了 The DAO 的合约账户上价值 5000 万美元的 ETH 落入黑客手中，并最终使得 ETH 分裂成平行的 ETC 与 ETH 两条链。导致 The DAO 事件的主要原因是智能合约的编写失误，ETH 维护团队的在事件后立即提出了软分叉策略：所有节点增加一条判断逻辑，不允许使用和 The DAO 相关的 ETH 进行交易。但他们并没有为这些判断指定额外的 gas fee，这导致了大量矿工遭遇了 DoS 攻击，最后 ETH 维护团队不得不采取硬分叉策略。</p>
+<p>wiki 链接：<a href="https://en.wikipedia.org/wiki/The_DAO_(organization)">https://en.wikipedia.org/wiki/The_DAO_(organization)</a></p>
+<p>技术分析：<a href="https://blog.chain.link/reentrancy-attacks-and-the-dao-hack/">https://blog.chain.link/reentrancy-attacks-and-the-dao-hack/</a></p>
+<h3 id="beauty-chain">Beauty Chain 事件</h3>
+<p>Beauty Chain 事件是 hacker 利用类型溢出导致的货币超发，导致 Beauty Chain 的代币市值暴跌。</p>
+<p>技术分析：<a href="https://learnblockchain.cn/2018/04/25/bec-overflow">https://learnblockchain.cn/2018/04/25/bec-overflow</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+      
+    
+  </body>
+</html>
